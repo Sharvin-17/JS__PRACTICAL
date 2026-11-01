@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Statusbar</title>
+</head>
+<body oncontextmenu="return false">
+
+<h2>Status Bar and Webpage Protection</h2>
+
+<a href="#"
+   onmouseover="showStatus('Home Page')"
+   onmouseout="clearStatus()">Home</a>
+
+<br><br>
+
+<a href="#"
+   onmouseover="showStatus('About Us Page')"
+   onmouseout="clearStatus()">About Us</a>
+
+<br><br>
+
+<p id="status">Move the mouse over the links.</p>
+
+<script>
+function showStatus(message)
+{
+    document.getElementById("status").innerHTML = message;
+}
+
+function clearStatus()
+{
+    document.getElementById("status").innerHTML =
+    "Move the mouse over the links.";
+}
+
+document.oncontextmenu = function()
+{
+    return false;
+};
+
+document.onkeydown = function(event)
+{
+    document.getElementById("status").innerHTML =
+    "Key Pressed: " + event.key;
+};
+</script>
+
+</body>
+</html>
