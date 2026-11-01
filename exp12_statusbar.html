@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Statusbar</title>
+</head>
+
+<body>
+
+<h2>Status Bar and Webpage Protection</h2>
+
+<a href="#"
+onmouseover="showStatus()"
+onmouseout="clearStatus()">
+Move Mouse Here
+</a>
+
+<br><br>
+
+<button onclick="showMessage()">Show Status Message</button>
+
+<p>Right-click is disabled on this page.</p>
+
+<script>
+
+// Display Status Message
+function showStatus() {
+    window.status = "Welcome to JavaScript";
+}
+
+// Clear Status Message
+function clearStatus() {
+    window.status = "";
+}
+
+// Show Alert Message
+function showMessage() {
+    alert("Welcome to the webpage!");
+}
+
+// Disable Right Click
+document.oncontextmenu = function() {
+    return false;
+};
+
+// Prevent Some Keyboard Shortcuts
+document.onkeydown = function(event) {
+    if (event.key == "F12") {
+        event.preventDefault();
+    }
+};
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<head>
+<title>Intrinsic JavaScript Functions</title>
+</head>
+
+<body>
+<h1>JavaScript Intrinsic Functions</h1>
+
+<h3>1. alert() Function</h3>
+<button onclick="showAlert()">Show Alert</button>
+
+<h3>2. prompt() Function</h3>
+<button onclick="takeInput()">Enter Name</button>
+
+<h3>3. confirm() Function</h3>
+<button onclick="checkConfirmation()">Confirm</button>
+
+<h3>4. parseInt(), parseFloat() and isNaN()</h3>
+Enter Value:
+<input type="text" id="num">
+<br><br>
+
+<button onclick="convertInteger()">parseInt()</button>
+<button onclick="convertFloat()">parseFloat()</button>
+<button onclick="checkNumber()">isNaN()</button>
+
+
+<h3>5. eval() Function</h3>
+Enter Expression:
+<input type="text" id="expression"
+placeholder="Example: 10 + 20 * 2">
+<br><br>
+
+<button onclick="evaluateExpression()">Evaluate</button>
+
+
+<h2>Output:</h2>
+<p id="output"></p>
+
+<script>
+function showAlert() {
+alert("Welcome to JavaScript Intrinsic Functions!");
+}
+
+function takeInput() {
+let name = prompt("Enter your name:");
+if (name != null && name != "") {
+document.getElementById("output").innerHTML =
+"Hello, " + name + "!";
+
+}
+}
+
+function checkConfirmation() {
+let result = confirm("Do you want to continue?");
+if (result == true) {
+document.getElementById("output").innerHTML =
+"You clicked OK.";
+} else {
+document.getElementById("output").innerHTML =
+"You clicked Cancel.";
+}
+}
+
+function convertInteger() {
+let value = document.getElementById("num").value;
+let result = parseInt(value);
+document.getElementById("output").innerHTML =
+"Integer Value: " + result;
+}
+
+function convertFloat() {
+let value = document.getElementById("num").value;
+let result = parseFloat(value);
+document.getElementById("output").innerHTML =
+"Float Value: " + result;
+}
+
+function checkNumber() {
+let value = document.getElementById("num").value;
+if (isNaN(value)) {
+document.getElementById("output").innerHTML =
+value + " is Not a Number.";
+} else {
+document.getElementById("output").innerHTML =
+value + " is a Valid Number.";
+}
+}
+
+function evaluateExpression() {
+let expression = document.getElementById("expression").value;
+let result = eval(expression);
+document.getElementById("output").innerHTML =
+"Result: " + result;
+}
+</script>
+
+</body>
+</html>

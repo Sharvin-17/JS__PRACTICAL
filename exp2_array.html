@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Arrays and Functions</title>
+</head>
+<body>
+
+<h1>Arrays and Functions</h1>
+
+<script>
+let arr = [40, 10, 30, 20, 50];
+
+document.write("Original Array: " + arr + "<br>");
+
+document.write("Length: " + arr.length + "<br>");
+
+let sum = 0;
+let largest = arr[0];
+
+for (let i = 0; i < arr.length; i++) {
+    sum = sum + arr[i];
+
+    if (arr[i] > largest) {
+        largest = arr[i];
+    }
+}
+
+document.write("Sum: " + sum + "<br>");
+document.write("Average: " + (sum / arr.length) + "<br>");
+document.write("Largest: " + largest + "<br>");
+
+arr.sort(function(a, b) {
+    return a - b;
+});
+
+document.write("Sorted Array: " + arr + "<br>");
+
+document.write("Index of 30: " + arr.indexOf(30) + "<br>");
+
+arr.push(60);
+document.write("After Push: " + arr + "<br>");
+
+arr.pop();
+document.write("After Pop: " + arr + "<br>");
+
+arr.unshift(5);
+document.write("After Unshift: " + arr + "<br>");
+
+arr.shift();
+document.write("After Shift: " + arr + "<br>");
+
+function add(a, b) {
+    return a + b;
+}
+
+document.write("Addition Using Function: " + add(10, 20));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Window Operations</title>
+</head>
+
+<body>
+
+<h2>Window Operations</h2>
+
+<button onclick="openwin()">Open Window</button>
+<br><br>
+
+<button onclick="closewin()">Close Window</button>
+<br><br>
+
+<button onclick="movewin()">Move Window</button>
+<br><br>
+
+<button onclick="resizewin()">Resize Window</button>
+<br><br>
+
+<button onclick="focuswin()">Focus Window</button>
+
+<script>
+let win;
+
+function openwin() {
+    win = window.open("", "Child", "width=400,height=300");
+
+    if (win) {
+        win.document.write("<h2>Child Window</h2>");
+    }
+}
+
+function closewin() {
+    if (win && !win.closed) {
+        win.close();
+    }
+}
+
+function movewin() {
+    if (win && !win.closed) {
+        win.moveTo(100, 100);
+    }
+}
+
+function resizewin() {
+    if (win && !win.closed) {
+        win.resizeTo(200, 300);
+    }
+}
+
+function focuswin() {
+    if (win && !win.closed) {
+        win.focus();
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Form Events</title>
+</head>
+
+<body>
+
+<h2>JavaScript Form Events</h2>
+
+<form onsubmit="submit_message()"
+      onreset="reset_message()">
+
+    <!-- Click Event -->
+    <button type="button" onclick="showMessage()">
+        Click Me
+    </button>
+    <br><br>
+
+    <!-- Double Click Event -->
+    <button type="button" ondblclick="doubleClick()">
+        Double Click Me
+    </button>
+    <br><br>
+
+    <!-- Focus and Blur Events -->
+    <input type="text" id="name"
+        onfocus="focusMessage()"
+        onblur="blurMessage()"
+        placeholder="Enter your name">
+    <br><br>
+
+    <!-- Change Event -->
+    <select id="city" onchange="changeMessage()">
+        <option value="">Select City</option>
+        <option value="Pune">Pune</option>
+        <option value="Mumbai">Mumbai</option>
+    </select>
+    <br><br>
+
+    <!-- Input Event -->
+    <input type="text" id="text"
+        oninput="input_message()"
+        placeholder="Start typing">
+    <br><br>
+
+    <!-- Submit and Reset -->
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+
+</form>
+
+<h3>Event Output:</h3>
+<div id="output"></div>
+
+<script>
+
+function showMessage()
+{
+    alert("Button Clicked");
+}
+
+function doubleClick()
+{
+    alert("Button Double Clicked");
+}
+
+function focusMessage()
+{
+    document.getElementById("output").innerHTML =
+        "Input box focused";
+}
+
+function blurMessage()
+{
+    document.getElementById("output").innerHTML =
+        "Input box lost focus";
+}
+
+function changeMessage()
+{
+    document.getElementById("output").innerHTML =
+        "Value Changed";
+}
+
+function input_message()
+{
+    document.getElementById("output").innerHTML =
+        "Input event occurred";
+}
+
+function submit_message()
+{
+    alert("Form Submitted");
+}
+
+function reset_message()
+{
+    alert("Form Reset");
+}
+
+</script>
+
+</body>
+</html>

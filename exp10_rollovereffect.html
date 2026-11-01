@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rollover Effects</title>
+</head>
+
+<body>
+
+<h2>Rollover Effects</h2>
+
+<img src="image1.jpg"
+id="img"
+onmouseover="changeImage()"
+onmouseout="restoreImage()"
+width="200"
+height="150">
+
+<script>
+function changeImage() {
+    document.getElementById("img").src = "image2.jpg";
+}
+
+function restoreImage() {
+    document.getElementById("img").src = "image1.jpg";
+}
+</script>
+
+</body>
+</html>

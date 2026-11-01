@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Menu Example</title>
+
+<style>
+body {
+    font-family: Arial;
+}
+
+.navbar {
+    background-color: black;
+    padding: 10px;
+}
+
+.navbar a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.menu button {
+    background-color: lightblue;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none;
+    background-color: lightgrey;
+    width: 100px;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.vertical a {
+    display: block;
+    background-color: lightblue;
+    padding: 10px;
+    width: 100px;
+    text-decoration: none;
+    color: black;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Navigation Menu</h2>
+
+<h3>Horizontal Menu</h3>
+
+<div class="navbar">
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Services</a>
+<a href="#">Contact</a>
+</div>
+
+<h3>Vertical Menu</h3>
+
+<div class="vertical">
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Services</a>
+<a href="#">Contact</a>
+</div>
+
+<h3>Dropdown Menu</h3>
+
+<div class="menu">
+
+<button onclick="showMenu()">Menu</button>
+
+<div class="dropdown" id="submenu">
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Services</a>
+<a href="#">Contact</a>
+</div>
+
+</div>
+
+<script>
+function showMenu() {
+
+let menu = document.getElementById("submenu");
+
+if (menu.style.display == "block") {
+    menu.style.display = "none";
+} else {
+    menu.style.display = "block";
+}
+
+}
+</script>
+
+</body>
+</html>

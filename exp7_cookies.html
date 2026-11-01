@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cookie Demonstration</title>
+</head>
+
+<body>
+
+<h1>Session and Persistent Cookies</h1>
+
+Enter your name:
+<input type="text" id="name">
+<br><br>
+
+<button onclick="sessionCookie()">Create Session Cookie</button>
+<br><br>
+
+<button onclick="persistentCookie()">Create Persistent Cookie</button>
+<br><br>
+
+<button onclick="readCookie()">Read Cookie</button>
+<br><br>
+
+<button onclick="deleteCookie()">Delete Cookie</button>
+
+<h2>Output:</h2>
+<p id="output"></p>
+
+<script>
+function sessionCookie() {
+let name = document.getElementById("name").value;
+
+document.cookie = "username=" + encodeURIComponent(name) + "; path=/";
+
+document.getElementById("output").innerHTML =
+"Session Cookie Created";
+}
+
+function persistentCookie() {
+let name = document.getElementById("name").value;
+
+document.cookie = "username=" + encodeURIComponent(name) +
+"; expires=Fri, 31 Dec 2027 23:59:59 UTC; path=/";
+
+document.getElementById("output").innerHTML =
+"Persistent Cookie Created";
+}
+
+function readCookie() {
+document.getElementById("output").innerHTML =
+document.cookie;
+}
+
+function deleteCookie() {
+document.cookie =
+"username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+
+document.getElementById("output").innerHTML =
+"Cookie Deleted";
+}
+</script>
+
+</body>
+</html>
